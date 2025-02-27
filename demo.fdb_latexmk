@@ -1,18 +1,18 @@
 # Fdb version 4
-["bibtex demo"] 1740231974.02868 "demo.aux" "demo.bbl" "demo" 1740231978.13301 0
+["bibtex demo"] 1740240130.65406 "demo.aux" "demo.bbl" "demo" 1740240135.13681 0
   "./reference/chapter1.bib" 1739517491 1787 57fda9c79da813189f30091703e0ae44 ""
   "./reference/gbt7714-numerical.bst" 1739517491 47138 e0c5be6da9178157e556a9a9852834d0 ""
-  "demo.aux" 1740231976 6927 1ec0bcdf24b5306c493636d9000e308c "xelatex"
+  "demo.aux" 1740240133 7820 c4a88d9545d544b76d3f8762e067c61b "xelatex"
   (generated)
   "demo.bbl"
   "demo.blg"
   (rewritten before read)
-["xdvipdfmx"] 1740231977.27937 "demo.xdv" "demo.pdf" "demo" 1740231978.1382 0
-  "demo.xdv" 1740231976 333420 844a35ea228d84a3bec9ada88cf71491 "xelatex"
+["xdvipdfmx"] 1740240134.2131 "demo.xdv" "demo.pdf" "demo" 1740240135.14229 0
+  "demo.xdv" 1740240133 348760 1bda8784df5213c74b0cc3e101128b33 "xelatex"
   (generated)
   "demo.pdf"
   (rewritten before read)
-["xelatex"] 1740231974.48734 "d:/毕业论文/xmu-thesis-grd/demo.tex" "demo.xdv" "demo" 1740231978.13321 0
+["xelatex"] 1740240131.13499 "d:/毕业论文/xmu-thesis-grd/demo.tex" "demo.xdv" "demo" 1740240135.13703 0
   "c:/Windows/Fonts/msyh.ttc" 1738521390 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1713881809 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1713882614 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -220,19 +220,22 @@
   "chapters/acronym_list.tex" 1739517491 65 1772ca89a053f3f699d34b82a84518e8 ""
   "chapters/appendix1.tex" 1739517491 348 4befa63917eb0e7a959f5e4b2f4b9eae ""
   "chapters/appendix2.tex" 1739517491 1450 21755c1b6c439ae76d2102824462acb6 ""
-  "chapters/chapter1.tex" 1740231970 11647 a6f02de23d8d3cec7088be3f73705686 ""
+  "chapters/chapter1.tex" 1740240127 12037 fd31f3ff30e12726948ccede37770949 ""
   "chapters/conclusion.tex" 1739517491 704 14fbdd6458b7cdcb49ad79ae578e952b ""
   "chapters/publications.tex" 1739517491 958 132d6319f4d7eb495ca5a801490c0305 ""
   "chapters/symbol_list.tex" 1739517491 27 1a2c61384b04d64d7afec360f4e8a50e ""
   "d:/毕业论文/xmu-thesis-grd/demo.tex" 1740144680 2553 17e0ec723c69c760578f7528db88fc42 ""
-  "demo.aux" 1740231976 6927 1ec0bcdf24b5306c493636d9000e308c "xelatex"
-  "demo.bbl" 1740231974 380 df8c4f4f41d6dc077f9019104a98461e "bibtex demo"
-  "demo.etoc" 1740231976 1632 de40d67ec185e930a9f4a0c527a5b372 "xelatex"
-  "demo.lof" 1740231976 117 6da0fb31177014010f5e3ad9bfd95b25 "xelatex"
-  "demo.lot" 1740231976 117 6da0fb31177014010f5e3ad9bfd95b25 "xelatex"
-  "demo.out" 1740231976 3567 0ad10b88ee413d8c9257a52bf27816e9 "xelatex"
+  "demo.aux" 1740240133 7820 c4a88d9545d544b76d3f8762e067c61b "xelatex"
+  "demo.bbl" 1740240131 380 df8c4f4f41d6dc077f9019104a98461e "bibtex demo"
+  "demo.etoc" 1740240133 1633 b41a28226e5d1d43a5fa38adf4f2c299 "xelatex"
+  "demo.lof" 1740240133 444 881ae47c089e4888ea307ede523136d2 "xelatex"
+  "demo.lot" 1740240133 117 6da0fb31177014010f5e3ad9bfd95b25 "xelatex"
+  "demo.out" 1740240133 3568 98fc6d53b92604c1fce0806fe3d722c2 "xelatex"
   "demo.tex" 1740144680 2553 17e0ec723c69c760578f7528db88fc42 ""
-  "demo.toc" 1740231976 1771 b34af6fcf28ff4ad2378fdf5cec790fe "xelatex"
+  "demo.toc" 1740240133 1772 31e85249bd5f1eb6ba869af5b2105975 "xelatex"
+  "figures/figure0.png" 1740239962 29895 e7fc5e8276b033675b17a9021d5d1db7 ""
+  "figures/figure2.png" 1740239782 38629 c421abd7e702b3374d7efe09d3793b1b ""
+  "figures/figure3.png" 1740239925 39875 f3ae7bf02da1de2b19bf71109ffb4a11 ""
   "glossaries-cn.sty" 1739517491 12000 7febcaaaf797731c7a248f2eddbc2a52 ""
   "pdf_files/copyright_statement.pdf" 1739517491 194457 8d5cee0abe3d62bdfaeb0c26e8c09a43 ""
   "pdf_files/cover.pdf" 1740144481 120031 1f2ca5329c360ec9e7d75bad0995fa7d ""

@@ -38,6 +38,15 @@
 促进Serverless技术的商业应用和发展
 随着云计算技术的不断发展，Serverless架构在互联网企业和各类业务应用中的应用越来越广泛。通过提升Serverless平台在高并发、大规模容器管理和异构计算资源安全管理方面的能力，本研究的成果不仅具有重要的学术价值，同时对促进Serverless技术在商业应用中的推广和发展具有重要意义。
 
+\captionsetup[figure]{justification=justified}
+\begin{figure}
+	\centering
+		\includegraphics[width=0.4\textwidth]{figures/figure0}
+ \label{fig:Overview-1}
+ \caption{Overview}
+\end{figure}
+
+
 \subsection{研究目标和内容}
 \ensection{Research objectives and content}
 本论文的主要研究目标是通过优化Linux内核cgroup机制，提高Serverless环境下容器的并发启动性能；通过引入静态程序验证技术，保证Serverless平台中DPU资源的多租户安全隔离。具体内容包括：
@@ -56,15 +65,7 @@ eBPF验证技术的应用：通过引入eBPF verifier等静态验证技术，确
 %\label{sec:features}
 
 
-% \captionsetup[figure]{justification=justified}
-% \begin{figure}
-% 	\centering
-% 		\includegraphics[width=0.75\textwidth]{figures/figure1}
-%  \label{fig:diagram}
-% %  \caption{热塑性形状记忆聚氨酯的形状记忆机理示意图}
- 
-%  \captionwithsource{热塑性形状记忆聚氨酯的形状记忆机理示意图}{数据来源：交代图形的出处或者来源，示明“作者、来源名称、时间”，用小五宋体，置图左下方。交代图形的出处或者来源，示明“作者、来源名称、时间”，用小五宋体，置图左下方。}
-% \end{figure}
+
 
 
 \subsection{Serverless 函数并发启动关键技术点}
@@ -77,6 +78,16 @@ eBPF验证技术的应用：通过引入eBPF verifier等静态验证技术，确
 DPU 容器（DPU container）通常是指基于 DPU（数据处理单元）技术，使用容器化技术来部署和管理的计算环境。简单来说，它结合了 DPU 的硬件加速能力和容器的灵活性，通常用于高性能计算、网络加速、存储加速等场景。
 Nvidia DPU具有硬件级隔离：NVIDIA BlueField DPU通过硬件加速引擎和专用处理资源，为每个租户提供独立的计算、存储和网络资源，确保租户之间的资源隔离。在云原生计算平台中，DPU通过卸载和加速基础设施功能，支持多租户环境下的高性能计算。DOCA编程框架（DPF）可以实现多租户的DPU服务的调配和编排，通过容器化的方式将 Kubernetes 控制平面功能扩展到 DPU，使管理员能够直接在 BlueField DPU 上部署和卸载 NVIDIA DOCA 服务和基于 DOCA 的第三方服务。DPF 配备了专门用于无缝集成的 SDK，提供了一个一致的模块化工具包，例如OVS，RDMA开发工具包。
 
+\captionsetup[figure]{justification=justified}
+\begin{figure}
+	\centering
+		\includegraphics[width=0.3\textwidth]{figures/figure2}
+ \label{fig:diagram}
+ \caption{DPU 应用程序的调配和服务编排}
+ 
+%  \captionwithsource{热塑性形状记忆聚氨酯的形状记忆机理示意图}{数据来源：交代图形的出处或者来源，示明“作者、来源名称、时间”，用小五宋体，置图左下方。交代图形的出处或者来源，示明“作者、来源名称、时间”，用小五宋体，置图左下方。}
+\end{figure}
+
 目前国内的 DPU（数据处理单元）在硬件级隔离方面的能力相对有限，要实现完全的硬件级隔离（特别是在安全性、可靠性、性能等方面的完全隔离）仍需要进一步的技术发展和硬件支持，尤其是是在K8s等云应用场景下。
 
 1.虚拟化和资源隔离：许多 DPU 提供了硬件加速的虚拟化支持，尤其是在网络、存储和计算资源的隔离方面。例如，DPUs 如浪潮的“云脉”DPU或者华为的“昇腾”DPU，已经具备一定的隔离能力，能够在同一物理硬件上支持多个虚拟机或容器的运行，并为其提供网络加速、存储加速等服务。但这种隔离更多是针对资源访问的虚拟化层面的，而非完全的硬件隔离。
@@ -88,6 +99,14 @@ Nvidia DPU具有硬件级隔离：NVIDIA BlueField DPU通过硬件加速引擎�
 目前国内的这种不具备完全硬件隔离能力的DPU无法支持租户之间的资源隔离要求，阻碍了DPU容器化的应用。
 ebpf 借助ebpf verfier实现了一个安全的沙箱，可以防止ebpf代码以多种方式来损害内核（DOS攻击、信息窃取攻击等）。Verifier可以在一定程度上对容器内的代码实现安全性隔离（todo：需要找一些case分析）。同时，eBPF verifier运行在程序加载阶段，不会给函数容器启动添加额外影响。 通过ebpf verifier实现ebpf sandbox可以在软件层面对用户代码实现安全保障作用。加入ebpf sandbox后的DPU容器化模型如下图所示：
 
+\captionsetup[figure]{justification=justified}
+\begin{figure}
+	\centering
+		\includegraphics[width=0.3\textwidth]{figures/figure3}
+ \label{fig:diagram}
+ \caption{eBPF隔离的DPU调配和服务编排}
+ 
+\end{figure}
 
 1. 硬件虚拟化与资源分区
 SR-IOV（单根I/O虚拟化）

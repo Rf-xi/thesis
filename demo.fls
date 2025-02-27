@@ -500,6 +500,12 @@ INPUT ./chapters/chapter1.tex
 INPUT ./chapters/chapter1.tex
 INPUT ./chapters/chapter1.tex
 INPUT chapters/chapter1.tex
+INPUT ./figures/figure0.png
+INPUT ./figures/figure0.png
+INPUT ./figures/figure2.png
+INPUT ./figures/figure2.png
+INPUT ./figures/figure3.png
+INPUT ./figures/figure3.png
 INPUT ./chapters/conclusion.tex
 INPUT ./chapters/conclusion.tex
 INPUT ./chapters/conclusion.tex
