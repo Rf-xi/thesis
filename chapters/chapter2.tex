@@ -1,0 +1,14 @@
+
+
+\section{Serverless 函数并发启动关键技术点}
+%\label{sec:requirements}
+% \subsection{Cgroup Operations for Container Startup}
+在本节中，我们分析了容器运行时在容器启动期间执行的与cgroup相关的操作，以及这些操作在Linux内核中的实现。我们以crun为例，这些分析同样适用于其他流行的容器运行时，如runc。这些操作如算法1所示，大致可以分为三个步骤。第一步是在第2至6行启用指定的控制器并创建cgroup。第二步是在第8行将子进程生成到已创建的cgroup中。最后一步是在第10行将资源限制值写入cgroup目录下相应的控制器接口文件中。
+
+具体来说，Linux内核中cgroup创建的实现如第18至25行所示。首先是分配并初始化一个cgroup结构体，并在cgroupfs的指定路径下创建一个新目录。接下来是在cgroup目录下创建cgroup核心文件。然后是为启用的控制器结构体分配内存，最后一步是创建相应的控制器接口文件。
+
+将一个进程附加到cgroup可以通过将进程ID写入cgroup目录下的cgroup.procs文件来完成。为了在创建时将新的子进程附加到指定的cgroup，Linux提供了clone3系统调用。
+
+将进程移动到cgroup的过程需要查找或创建一个css\_set，对控制器执行can\_fork检查以确保资源限制不被超出，最后将进程附加到控制器。
+
+删除cgroup与创建cgroup相反。它涉及解除cgroup控制器的链接，将控制器离线，并销毁控制器。在cgroup删除过程中，锁的持有时间要短得多，因为在持有锁时只需使控制器不再被引用。其余耗时的操作是异步且无锁地完成的。因此，与创建相比，cgroup删除对cgroup可扩展性的影响较小。
